@@ -2,10 +2,9 @@
 
 open Expecto
 open System
-open Hopac.Platform
-
 
 type ListItem = { prop: int; }
+type ListItem2 = { newProp: string; }
 let simpleTest =
   test "A simple test" {
     let expected = 4
@@ -83,18 +82,21 @@ let simpleTest =
     let reduce = map |> List.reduce (fun acu next -> acu + next)
     let fold = map |> List.fold (fun acu next -> acu + next) 0
     let foldRecordToString = initialList |> List.fold (fun acu next -> acu + next.prop.ToString()) ""
+    let foldRecordsToRecord = initialList |> List.fold (fun acu next -> { newProp = acu.newProp + next.prop.ToString() }) { newProp = "0" }
     
     let expectedFilter = [{prop = 1}]
     let expectedMap = [2;3]
     let expectedReduce = 5
     let expectedFold = 5
-    let expectedDoldRecordToString = "12"
+    let expectedFoldRecordToString = "12"
+    let expectedFoldRecordsToRecord = { newProp = "012" }
                                 
     Expect.equal expectedFilter filter "Should return filtered list"
     Expect.equal expectedMap map "Should return remapped list of ints"
     Expect.equal reduce expectedReduce "Should return reduced int"
     Expect.equal fold expectedFold "Should return folded int"
-    Expect.equal foldRecordToString expectedDoldRecordToString "Should return folded string"
+    Expect.equal foldRecordToString expectedFoldRecordToString "Should return folded string"
+    Expect.equal foldRecordsToRecord expectedFoldRecordsToRecord "Should return folded record"
   }
   
   
