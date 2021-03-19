@@ -1,6 +1,6 @@
-﻿namespace helloworld.Issue
+﻿namespace helloworld.Issue.Types
 
-module types =
+module domain =
     open System.Collections.Generic
     open MongoDB.Bson
     open MongoDB.Bson.Serialization.Attributes

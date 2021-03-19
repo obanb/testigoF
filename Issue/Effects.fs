@@ -2,9 +2,9 @@
 
 module database =
     open MongoDB.Driver
-    open helloworld.Issue.types
+    open helloworld.Issue.Types.domain
     open MongoDB.Bson
-    
+
     let getIssues (dbClient: IMongoDatabase) =
         let col = dbClient.GetCollection<Issue> "issues"
 

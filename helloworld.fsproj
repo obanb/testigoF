@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Issue\Types.fs" />
     <Compile Include="Common\Error.fs" />
     <Compile Include="Common\Database.fs" />
-    <Compile Include="Issue\Types.fs" />
     <Compile Include="tests\common.fs" />
     <Compile Include="tests\config.fs" />
     <Compile Include="Issue\Utils.fs" />

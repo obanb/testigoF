@@ -1,7 +1,7 @@
 ﻿module helloworld.Issue.Validations
 
 open System
-open helloworld.Issue.types
+open helloworld.Issue.Types.domain
 
 let validateRequired prop propName =
     match prop with

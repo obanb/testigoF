@@ -13,7 +13,7 @@ open MongoDB.Driver
 open helloworld.tests.config
 open helloworld.tests.common
 
-open helloworld.Issue.actions
+open helloworld.Issue.Actions.https
 open helloworld.Common.Database.connections
 
 let setCORSHeaders =
@@ -53,7 +53,7 @@ let app (dbClient: IMongoDatabase) =
 
 [<EntryPoint>]
 let main argv =
-    runExpecto argv simpleTest
+    runExpecto argv simpleTest |> ignore
 
     startWebServer serverConfig (getInternalMongoClient () |> app)
 

@@ -1,7 +1,7 @@
 ﻿namespace helloworld.Issue.Utils
 
 module convertors =
-    open helloworld.Issue.types
+    open helloworld.Issue.Types.domain
     open Newtonsoft.Json
     open Suave
 

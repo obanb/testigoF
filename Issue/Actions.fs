@@ -1,9 +1,9 @@
-﻿namespace helloworld.Issue
+﻿namespace helloworld.Issue.Actions
 
-module actions =
+module https =
 
     open Suave
-    open helloworld.Issue.types
+    open helloworld.Issue.Types.domain
     open helloworld.Issue.Effects.database
     open Newtonsoft.Json
     open helloworld.Issue.Validations
