@@ -75,7 +75,7 @@ let simpleTest =
     Expect.equal expected origin "Should return equal lists of strings."
   }
   
-  test "LIST.TRAVERSE_ASYNC_A multiple async map results into single async list" {
+  test "Some common list operations" {
     let initialList = [{ prop = 1}; {prop = 2}]
     
     let filter = initialList |> List.filter (fun item -> item.prop = 1)
